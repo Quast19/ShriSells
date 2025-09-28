@@ -1,16 +1,16 @@
 package com.shriSells.main.services;
 
 import com.shriSells.main.interfaces.IProductRepository;
+import com.shriSells.main.interfaces.IProductService;
 import com.shriSells.main.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 @Service
-public class ProductService {
+public class ProductService implements IProductService {
     // Correct way to initialize a list with a single item
     @Autowired
     IProductRepository repo;
@@ -22,6 +22,10 @@ public class ProductService {
     public List<Product> getProducts() {
         return repo.findAll();
     }
+    public Optional<Product> getProductById(Long id){
+        return repo.findById(id);
+    }
+
     public int numberOfProducts() {
         return repo.findAll().size();
     }
@@ -30,7 +34,8 @@ public class ProductService {
         return repo.save(product);
     }
 
-    public void deleteProduct(long productId){
-        repo.deleteById(productId);
+    @Override
+    public void deleteProduct(Long id){
+        repo.deleteById(id);
     }
 }

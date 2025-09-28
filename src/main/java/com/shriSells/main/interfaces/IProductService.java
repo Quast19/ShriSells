@@ -13,13 +13,13 @@ public interface IProductService {
     Product saveProduct(Product product);
 
     /** Retrieves all Products. */
-    List<Product> getAllProducts();
+    List<Product> getProducts();
 
     /** Retrieves a Product by its ID. */
     Optional<Product> getProductById(Long id);
 
-    /** Retrieves a Product by its unique SKU. */
-    Optional<Product> getProductBySku(String sku); // <-- New method for SKU
+//    /** Retrieves a Product by its unique SKU. */
+//    Optional<Product> getProductBySku(String sku); // <-- New method for SKU
 
     /** Deletes a Product by its ID. */
     void deleteProduct(Long id);
