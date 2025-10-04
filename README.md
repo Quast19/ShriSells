@@ -15,6 +15,8 @@ The application is designed as a **self-contained unit**, simplifying initial de
 ## Architecture
 The application follows a **monolithic architecture**.  
 This design centralizes all components into a single deployable unit, making development and testing more manageable for this scope.
+### Authentication flow:
+<img width="873" height="597" alt="image" src="https://github.com/user-attachments/assets/11a50658-d176-43eb-a775-6f2250fb0d6e" />
 
 ### Key Components
 - **User Management**: Handles user registration, authentication (via JWT), and profile management.  
@@ -26,6 +28,7 @@ This design centralizes all components into a single deployable unit, making dev
 
 ## Database Schema
 The application uses a **relational database (MySQL)** to store persistent data. The schema is designed for **data integrity and efficiency**.
+<img width="1447" height="811" alt="image" src="https://github.com/user-attachments/assets/c212ea55-9074-4ad9-b3b5-2cf0545b546c" />
 
 ### Core Tables
 - **users**: Stores customer credentials and profile details.  
