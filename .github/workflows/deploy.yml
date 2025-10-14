@@ -28,8 +28,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/myapp:latest
-            ${{ secrets.DOCKER_USERNAME }}/myapp:${{ github.sha }}
+            ${{ secrets.DOCKER_USERNAME }}/shri-sells:latest
+            ${{ secrets.DOCKER_USERNAME }}/shri-sells:${{ github.sha }}
 
       - name: Trigger Render deploy
         id: deploy
