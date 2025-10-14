@@ -1,7 +1,9 @@
 package com.shriSells.main.services;
 
+import com.shriSells.main.interfaces.ICartRepository;
 import com.shriSells.main.interfaces.ICustomerRepository;
 import com.shriSells.main.interfaces.ICustomerService;
+import com.shriSells.main.interfaces.IProductRepository;
 import com.shriSells.main.models.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service; // Import the @Service annotation
@@ -14,6 +16,8 @@ public class CustomerService implements ICustomerService {
 
     @Autowired
     ICustomerRepository repo;
+    ICartRepository cartRepo;
+    IProductRepository productRepo;
 
     /**
      * Finds customers by their name.

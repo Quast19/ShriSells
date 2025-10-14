@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class HelloController {
 
-    @GetMapping("/hello")
+    @GetMapping("/")
     public String sayHello() {
-        return "hello World";
+        return "Welcome to shri sells, Swagger has been configured please view API details on swagger html, 'swagger-ui/index.html'";
     }
 
     @GetMapping("/secure/hello")
