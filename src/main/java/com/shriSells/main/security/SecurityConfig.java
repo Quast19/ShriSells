@@ -17,8 +17,8 @@ import org.springframework.security.web.SecurityFilterChain;
         public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
             http.csrf(AbstractHttpConfigurer::disable)
                     .authorizeHttpRequests(auth -> auth
-                            .requestMatchers("/secure/**").authenticated() // secure endpoints
-                            .requestMatchers("/*").permitAll()   // open endpoints
+                            .requestMatchers("/*").authenticated() // secure endpoints
+                            //.requestMatchers("/*").permitAll()   // open endpoints
                             .anyRequest().permitAll()
                     )
                     .addFilterBefore(googleJWTAuthFilter,

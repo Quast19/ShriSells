@@ -29,4 +29,9 @@ public class CustomerController {
     public Customer findByMe(Authentication authentication){
         return (Customer) authentication.getPrincipal();
     }
+
+//    @GetMapping("/myDetails")
+//    public  customerDetails(Authentication authentication){
+//
+//    }
 }
