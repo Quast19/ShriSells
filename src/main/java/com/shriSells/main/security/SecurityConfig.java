@@ -13,13 +13,19 @@ import org.springframework.security.web.SecurityFilterChain;
         @Autowired
         private GoogleJWTAuthFilter googleJWTAuthFilter;
 
+        private static final String[] SWAGGER_WHITELIST = {
+                "/v3/api-docs/**",
+                "/swagger-ui/**",
+                "/swagger-ui.html"
+        };
+
         @Bean
         public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
             http.csrf(AbstractHttpConfigurer::disable)
                     .authorizeHttpRequests(auth -> auth
-                            .requestMatchers("/*").authenticated() // secure endpoints
+                            .requestMatchers(SWAGGER_WHITELIST).permitAll()
                             //.requestMatchers("/*").permitAll()   // open endpoints
-                            .anyRequest().permitAll()
+                            .anyRequest().authenticated()
                     )
                     .addFilterBefore(googleJWTAuthFilter,
                             org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class);
